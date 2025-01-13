@@ -22,6 +22,10 @@
     color: var(--main-color);
 }
 
+.rating {
+    color: var(--main-color);
+}
+
 body {
     display: flex;
     flex-direction: column; /* Empile les enfants verticalement */
@@ -46,6 +50,8 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+
 
 .section-title {
     margin: 0;
@@ -115,6 +121,7 @@ nav a:hover {
 }
 
 /****** Search Bar ******/
+
 /* Conteneur de la barre de recherche */
 .search-bar {
     display: flex; /* Aligne les éléments horizontalement */
@@ -241,22 +248,43 @@ nav a:hover {
     color: var(--main-color); /* Icône bleue au survol */
 }
 
-/******* Info bar ******/
+/****** info bar ******/
+
 .info-container {
-    display: flex; /* Aligne les éléments horizontalement */
+    display: flex;
     align-items: center; /* Centre verticalement l'icône et le texte */
     gap: 10px; /* Espace entre l'icône et le texte */
-    font-size: 16px; /* Taille de la police */
-    color: #333; /* Couleur du texte */
+    margin-top: 20px;
+
 }
 
-/* Style de l'icône */
-.info-container i {
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Diamètre du cercle */
+    height: 30px;
+    border: 2px solid #D3D3D3; /* Bordure grise */
+    border-radius: 50%; /* Cercle parfait */
+}
+
+.icon-circle i {
     color: #0065FC; /* Couleur bleue pour l'icône */
-    font-size: 18px; /* Taille de l'icône */
+    font-size: 16px; /* Taille de l'icône */
 }
 
 /****** Hebergements And Populaires ***********/
+
+.grid.hebergements {
+    display: grid; /* Active la grille */
+    grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
+    gap: 20px; /* Espace entre les cartes */
+    margin-top: 20px;
+    padding: 20px; /* Ajoute un espacement interne */
+    background-color: var(--main-bg-color); /* Fond gris clair */
+    border-radius: 10px; /* Coins arrondis */
+}
+
 .hebergements-and-populaires {
     display: flex; /* Place les deux sections sur une ligne */
     justify-content: space-between; /* Espace entre les sections */
@@ -324,15 +352,7 @@ nav a:hover {
 }
 
 /****** Grille ***********/
-.grid.hebergements {
-    display: grid; /* Active la grille */
-    grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
-    gap: 20px; /* Espace entre les cartes */
-    margin-top: 20px;
-    padding: 20px; /* Ajoute un espacement interne */
-    background-color: var(--main-bg-color); /* Fond gris clair */
-    border-radius: 10px; /* Coins arrondis */
-}
+
 
 .grid.activites {
     display: grid; /* Active le système de grille */
