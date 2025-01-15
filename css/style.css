@@ -81,13 +81,13 @@ header {
     height: 19px;
 }
 
-nav {
+.nav {
     display: flex;
     align-items: flex-start;
     padding: 10px 0; /* Ajoute un espacement pour éviter que le texte touche la bordure */
 }
 
-nav a {
+.nav a {
     margin-left: 20px;
     color: var(--text-color);
     font-size: 16px;
@@ -96,7 +96,7 @@ nav a {
 }
 
 /* Changement de couleur et ajout de bordure au survol */
-nav a:hover {
+.nav a:hover {
     color: var(--main-color); /* Change la couleur du texte */
     border-top: 1px solid var(--main-color); /* Affiche une bordure bleue */
 }
@@ -308,7 +308,7 @@ nav a:hover {
 
 /********* Hebergements And Populaires *********/
 
-.grid.hebergements {
+.hebergements-cards {
     display: grid; /* Active la grille */
     grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
     gap: 20px; /* Espace entre les cartes */
