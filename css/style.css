@@ -33,6 +33,7 @@ body {
     margin: 0; /* Supprime les marges */
     background-color: var(--main-bg-color);
     color: var(--text-color);
+    min-width: 320px; /* Limite minimale pour un affichage garanti */
 }
 
 .main-container {
@@ -106,6 +107,15 @@ nav a:hover {
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    display: block; /* Transforme la carte en un élément bloc pour couvrir l'ensemble du contenu */
+    text-decoration: none; /* Supprime les soulignements sur les textes des liens */
+    color: inherit; /* Conserve la couleur du texte de la carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute des animations pour un effet visuel au survol */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Légère mise en avant au survol */
+    filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.2)); /* Améliore l'ombre pour un effet au survol */
 }
 
 .card img {
@@ -141,8 +151,9 @@ nav a:hover {
     align-items: center; /* Centre verticalement */
     background: transparent; /* Fond transparent */
     overflow: hidden; /* Coupe les débordements éventuels */
-    width: fit-content; /* Ajuste la largeur au contenu */
-    padding: 15px 0px; /* Espacement interne */
+    width: 377px; /* Largeur précise */
+    height: 49px; /* Hauteur précise */
+    margin: 20px 0px; /* Espacement interne */
 }
 
 /* Premier conteneur : Icône */
@@ -151,21 +162,28 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     background-color: #F8F9FA; /* Fond gris clair */
-    padding: 15px 15px; /* Espacement interne */
+    padding: 15px 16px 15px 16px; /* Espacement interne */
     border-top-left-radius: 15px; /* Arrondi gauche supérieur */
     border-bottom-left-radius: 15px; /* Arrondi gauche inférieur */
+    width: 50px; /* Largeur précise */
+    height: 49px; /* Hauteur précise */
 }
 
 .search-icon i {
-    font-size: 16px; /* Taille de l'icône */
+    font-size: 18px; /* Définit la hauteur de l'icône */
     color: #000; /* Couleur noire pour l'icône */
+    width: 14px; /* Largeur précise */
+    height: 18px; /* Hauteur précise */
+    display: inline-block; /* Permet de définir largeur/hauteur exactes */
+    line-height: 18px; /* Centre l'icône verticalement */
+    text-align: center; /* Centre l'icône horizontalement */
 }
 
 /* Deuxième conteneur : Champ de recherche */
 .search-input {
     display: flex;
     align-items: center;
-    padding: 10px 15px; /* Espacement interne */
+    padding: 15px 16px 15px 16px; /* Espacement interne */
     background-color: white; /* Fond blanc */
     flex-grow: 1; /* Permet au champ de texte de s'étendre */
 }
@@ -189,10 +207,11 @@ nav a:hover {
 .search-button {
     background-color: #0065FC; /* Fond bleu */
     color: white; /* Texte blanc */
+    font-weight: bold; /* Texte en gras */
     border: none; /* Supprime les bordures */
     border-top-right-radius: 15px; /* Arrondi droit supérieur */
     border-bottom-right-radius: 15px; /* Arrondi droit inférieur */
-    padding: 10px 20px; /* Espacement interne pour ajuster la taille */
+    padding: 15px 16px 15px 16px; /* Espacement interne pour ajuster la taille */
     font-size: 16px; /* Taille du texte */
     cursor: pointer; /* Curseur main au survol */
 }
@@ -226,7 +245,7 @@ nav a:hover {
 .filters-label {
     display: flex; /* Active Flexbox */
     align-items: center; /* Centre verticalement l'icône et le texte */
-    font-size: 16px; /* Taille du texte */
+    font-size: 18px; /* Taille du texte */
     font-weight: bold; /* Texte en gras */
     color: #333; /* Couleur du texte noir */
 }
@@ -507,6 +526,30 @@ footer a:hover {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+    .hebergements-and-populaires {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .grid.hebergements {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .populaires-cards {
+        flex-direction: column; /* Les cartes s’empilent */
+        gap: 20px; /* Espacement entre les cartes */
+    }
+
+    .activites-cards {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    nav {
+        flex-direction: column; /* Navigation verticale */
+        align-items: center; /* Centre les liens */
+    }
+
+    nav a {
+        margin: 10px 0; /* Espacement entre les liens */
+    }
 }
-    
