@@ -62,23 +62,35 @@ a {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: var(--padding) 0;
     background-color: #fff;
 }
 
+.logo {
+    display: flex;
+    padding: 30px 0 30px 0px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
 .logo img {
-    max-width: 90px;
+    image-orientation: left;
+    width: 61.09px;
+    height: 19px;
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0; /* Ajoute un espacement pour éviter que le texte touche la bordure */
 }
 
 nav a {
     margin-left: 20px;
     color: var(--text-color);
-    font-weight: 500;
-    text-decoration: none;
     font-size: 16px;
-    padding: 5px 0; /* Ajoute un espacement pour éviter que le texte touche la bordure */
-    border-top: 3px solid transparent; /* Bordure invisible par défaut */
+    padding: 0; /* Ajoute un espacement pour éviter que le texte touche la bordure */
     transition: all 0.3s ease; /* Animation fluide pour l'effet */
 }
 
