@@ -146,6 +146,14 @@ header {
 /********* Search Bar *********/
 
 /* Conteneur de la barre de recherche */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+
 .search-bar {
     display: flex; /* Aligne les éléments horizontalement */
     align-items: center; /* Centre verticalement */
@@ -157,7 +165,7 @@ header {
 }
 
 /* Premier conteneur : Icône */
-.search-icon {
+.marker-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,7 +177,7 @@ header {
     height: 49px; /* Hauteur précise */
 }
 
-.search-icon i {
+.marker-icon i {
     font-size: 18px; /* Définit la hauteur de l'icône */
     color: #000; /* Couleur noire pour l'icône */
     width: 14px; /* Largeur précise */
@@ -221,6 +229,13 @@ header {
     background-color: #004BB7; /* Fond bleu foncé au survol */
 }
 
+.search-button .search-text {
+    display: inline; /* Texte visible sur desktop */
+}
+
+.search-button .search-icon {
+    display: none; /* Icône cachée par défaut */
+}
 /********* Filter Bar *********/
 
 /* Conteneur général */
@@ -526,6 +541,19 @@ footer a:hover {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+
+    .search-button {
+        border-radius: 15px; /* Coins arrondis pour mobile */
+    }
+    
+    .search-button .search-text {
+        display: none; /* Texte caché sur mobile */
+    }
+
+    .search-button .search-icon {
+        display: inline; /* Icône visible sur mobile */
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
         padding: 10px;
