@@ -890,6 +890,28 @@ footer a:hover {
 
     /********* Activités Section *********/
 
+    #activites {
+        margin-top: 20px; /* Réduction de la marge pour mobile */
+        margin-bottom: 20px; /* Réduction de la marge inférieure */
+    }
+
+    .activites-cards {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 15px; /* Réduction de l'espacement entre les cartes */
+        padding: 10px; /* Ajout d'un léger padding interne */
+    }
+
+    .activites-cards img {
+        height: auto; /* Ajuste automatiquement la hauteur pour s'adapter à la largeur */
+    }
+
+    .activites-cards .card h3 {
+        margin-top: 10px; /* Réduction de la marge supérieure */
+        margin-bottom: 10px; /* Réduction de la marge inférieure */
+        margin-left: 0; /* Supprime la marge à gauche pour alignement centré */
+        text-align: center; /* Centre le texte pour mobile */
+        font-size: 14px; /* Réduction de la taille du texte pour mobile */
+    }
 
     /********* Footer *********/
     footer {
