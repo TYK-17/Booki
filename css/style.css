@@ -769,6 +769,25 @@ footer a:hover {
         font-size: 10px; /* Taille de l'icône */
     }
 
+    /********* Hebergements And Populaires *********/
+    
+    .hebergements-and-populaires {
+        display: flex;
+        flex-direction: column; /* Empile les sections verticalement */
+    }
+
+    #populaires {
+        order: 1; /* La section "Populaires" en premier */
+    }
+
+    #hebergements {
+        order: 2; /* La section "Hébergements" en second */
+    }
+
+    #activites {
+        order: 3; /* La section "Activités" en dernier */
+    }
+
     /********* Populaires Section *********/
     
     .populaires-cards {
