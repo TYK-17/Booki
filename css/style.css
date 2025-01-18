@@ -247,17 +247,17 @@ nav a:hover::before {
 .search-button .search-icon {
     display: none; /* Icône cachée par défaut */
 }
+
 /********* Filter Bar *********/
 
 /* Conteneur général */
-
-.filters-container {
+.filters {
     display: flex;
     gap: 15px; /* Espacement entre les boutons */
 }
 
 /* Boutons de filtre */
-.filters {
+.filters-container {
     display: flex; /* Place les boutons sur une seule ligne */
     gap: 15px;
     margin-top: 20px;
@@ -563,9 +563,12 @@ footer a:hover {
         flex: 1; /* Prend tout l'espace disponible pour pousser le footer vers le bas */
         display: flex;
         flex-direction: column; /* Empile les sections verticalement */
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center; /* Centre les éléments verticalement */
         width: 100%;
-        max-width: 767.98px;
-        padding: 0 50px;
+        max-width: 767.98px; /* Largeur maximale pour rester mobile-friendly */
+        padding: 0; /* Supprime les marges internes */
+        margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
         box-sizing: border-box;
         background-color: var(--main-bg-white);
     }
@@ -580,6 +583,8 @@ footer a:hover {
         font-size: 22px;
     }
     
+    /********* Header *********/
+
     header {
         display: flex;
         flex-direction: column; /* Aligne les éléments verticalement */
@@ -595,9 +600,10 @@ footer a:hover {
         display: flex;
         align-items: center; /* Centre les liens */
         justify-content: center; /* Centre les liens horizontalement */
-        gap: 40px; /* Ajoute un espacement important entre les liens */
+        gap: 80px; /* Ajoute un espacement important entre les liens */
         width: 100%; /* Prend toute la largeur disponible */
         position: relative;
+        margin-top: 20px; /* Espacement au-dessus du header */
     }
     
     nav a {
@@ -631,6 +637,26 @@ footer a:hover {
     background-color: #0065FC; /* Bordure bleue pour le lien actif */
     }
 
+    .hebergements h1 {
+        font-size: 24px; /* Taille adaptée pour le titre principal */
+        font-weight: bold; /* Texte en gras */
+        text-align: left; /* Alignement à gauche */
+        margin: 0 20px 8px; /* Pas de marge en haut, mais espacement en bas */
+        line-height: 1.4; /* Espacement entre les lignes */
+        color: #000; /* Couleur noire pour le titre */
+    }
+    
+    .hebergements p {
+        font-size: 16px; /* Taille du texte secondaire */
+        font-weight: normal; /* Texte en style normal */
+        text-align: left; /* Alignement à gauche */
+        margin: 0 20px; /* Suppression de la marge par défaut */
+        line-height: 1.6; /* Espacement plus important pour la lisibilité */
+        color: #555; /* Couleur grise pour le texte secondaire */
+    }
+    
+    /********* Search Bar *********/
+
     .search-bar {
         display: flex;
         align-items: center; /* Centre les liens */
@@ -638,6 +664,29 @@ footer a:hover {
         width: 100%; /* Prend toute la largeur disponible */
         max-width: 320px; /* Largeur maximale */
         margin: 20px; /* Centre horizontalement */
+    }
+
+    .search-input {
+        display: flex;
+        align-items: center;
+        padding: 15px 16px 15px 16px; /* Espacement interne */
+        background-color: white; /* Fond blanc */
+        flex-grow: 1; /* Permet au champ de texte de s'étendre */
+    }
+    
+    .search-input input {
+        border: none; /* Supprime les bordures */
+        outline: none; /* Supprime l'effet de focus */
+        text-align: center;
+        font-size: 18px; /* Taille du texte */
+        color: var(--text-color); /* Couleur du texte */
+        width: auto; /* Largeur personnalisée */
+    }
+    
+    /* Style pour le placeholder */
+    .search-input input::placeholder {
+        font-weight: bold; /* Texte en gras */
+        color: var(--text-color); /* Couleur noire */
     }
 
     .search-button {
@@ -652,27 +701,76 @@ footer a:hover {
         display: inline; /* Icône visible sur mobile */
     }
 
+    /********* Filter Bar *********/
+
+    /* Conteneur général */
+    .filters-container {
+        flex-direction: column; /* Boutons empilés verticalement */
+        gap: 10px; /* Réduction de l'espacement */
+        margin-top: 10px; /* Réduction de la marge supérieure */
+    }
+
+    /* Boutons de filtre */
     .filters {
-        display: grid; /* Active une grille pour les filtres */
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-        gap: 10px; /* Espacement entre les boutons */
-        margin: 20px auto; /* Centre la grille */
-        width: 90%; /* Ajuste la largeur de la grille */
+        display: grid; /* Utilisation de la grille */
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
+        gap: 10px; /* Espacement entre les colonnes et les lignes */
+        justify-content: center; /* Centrage horizontal des éléments */
+        align-items: center; /* Centrage vertical des éléments dans la grille */
+        width: 100%; /* La grille occupe toute la largeur disponible */
+        max-width: 400px; /* Limite la largeur totale */
+        padding: 0 20px 0 20px;
+    }
+
+    /* Label "Filtres" */
+    .filters-label {
+        font-size: 16px; /* Réduction de la taille du texte */
+        margin-bottom: 10px; /* Ajout d'un espacement sous le label */
+        padding: 0 20px;
+        justify-content: left; /* Centrage horizontal du label */
+        text-align: center; /* Texte centré */
     }
 
     .filters button {
-        width: 100%; /* Les boutons prennent toute la largeur disponible */
+        justify-content: center;
+        padding: 10px; /* Réduction de l'espacement interne */
+        font-size: 16px; /* Réduction de la taille du texte */
     }
 
-    .hebergements-and-populaires {
-        flex-direction: column;
-        padding: 10px;
+    /* Icônes dans les boutons */
+    .filters button i {
+        font-size: 22px; /* Réduction de la taille des icônes */
     }
 
-    .grid.hebergements {
-        grid-template-columns: 1fr; /* Une seule colonne */
+    /********* info bar *********/
+
+    .info-container {
+        display: flex;
+        align-items: center; /* Centre verticalement l'icône et le texte */
+        gap: 10px; /* Espace entre l'icône et le texte */
+        padding: 20px;
+        margin-top: 30px;
+        font-size: 16px;
+
     }
 
+    .icon-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px; /* Diamètre du cercle */
+        height: 24px;
+        border: 1px solid #D3D3D3; /* Bordure grise */
+        border-radius: 50%; /* Cercle parfait */
+    }
+
+    .icon-circle i {
+        color: #0065FC; /* Couleur bleue pour l'icône */
+        font-size: 10px; /* Taille de l'icône */
+    }
+
+    /********* Populaires Section *********/
+    
     .populaires-cards {
         flex-direction: column; /* Les cartes s’empilent */
         gap: 20px; /* Espacement entre les cartes */
@@ -686,6 +784,18 @@ footer a:hover {
         flex-direction: column;
     }
 
+    /********* Hebergements Section *********/
+
+    .grid.hebergements {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    
+
+    /********* Activités Section *********/
+
+    /********* Cards *********/
+
     .card {
         flex-direction: column;
         text-align: center;
@@ -696,4 +806,45 @@ footer a:hover {
         height: auto;
         border-radius: 15px 15px 0 0;
     }
+
+    /********* Footer *********/
+    footer {
+        display: flex;
+        flex-direction: column; /* Empile les sections verticalement */
+        background-color: var(--main-bg-color);
+        max-width: 100%; /* Assure que le footer occupe la même largeur */
+        width: 100%; /* Prend la largeur complète de son conteneur parent */
+        padding: var(--padding); /* Applique un padding uniforme si nécessaire */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+        gap: 20px; /* Espacement entre les sections */
+        margin: 0 auto; /* Centre le footer horizontalement */
+    }
+    
+    footer h4 {
+        font-size: 18px;
+        color: var(--text-color);
+        margin-bottom: 10px;
+    }
+    
+    footer ul {
+        font-size: 16px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    footer ul li {
+        margin-bottom: 10px;
+    }
+    
+    footer a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+        color: var(--main-color);
+    }
+    
 }
