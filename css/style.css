@@ -591,6 +591,10 @@ footer a:hover {
         font-size: 22px;
     }
     
+    .hebergements {
+        width: 100%; /* La section occupe toute la largeur */
+    }
+
     /********* Header *********/
 
     header {
@@ -791,6 +795,14 @@ footer a:hover {
     .hebergements-and-populaires {
         display: flex;
         flex-direction: column; /* Empile les sections verticalement */
+        align-items: center;
+    }
+
+    .hebergements-and-populaires section {
+        background-color: var(--main-bg-white);
+        border-radius: 20px;
+        padding: 15px;
+        box-sizing: border-box;
     }
 
     #populaires {
@@ -878,24 +890,19 @@ footer a:hover {
 
      /* Affichage en colonne pour les hébergements */
      .hebergements-cards {
+        align-items: center;
         grid-template-columns: 1fr; /* Une seule colonne */
         gap: 20px; /* Espace entre les cartes */
-        padding: 10px; /* Réduction du padding pour mobile */
+        padding: 0; /* Réduction du padding pour mobile */
+        background-color: var(----main-bg-white);
     }
 
     .hebergements .card img {
         border-radius: 10px;
-        width: 250px;
-        height: 124px;
+        width: 100%;
         border-top-left-radius: 0px; /* Coin arrondi en bas à gauche */
         border-top-right-radius: 0px; /* Coin droit en bas à droite */
     }
-
-    .hebergements {
-        width: 100%; /* La section occupe toute la largeur */
-    }
-
-    
 
     /********* Activités Section *********/
 
