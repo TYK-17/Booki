@@ -609,18 +609,20 @@ footer a:hover {
         display: flex;
         align-items: center; /* Centre les liens */
         justify-content: center; /* Centre les liens horizontalement */
-        gap: 80px; /* Ajoute un espacement important entre les liens */
         width: 100%; /* Prend toute la largeur disponible */
         position: relative;
         margin-top: 20px; /* Espacement au-dessus du header */
+        gap: 0; /* Désactive l'espace entre les éléments */
     }
     
     nav a {
+        flex: 1; /* Permet aux liens de prendre une largeur égale */
+        text-align: center;
         text-decoration: none;
         font-size: 16px;
         color: black;
         position: relative;
-        padding: 5px 10px;
+        padding: 10px 0p;
         transition: all 0.3s ease; /* Transition fluide */
     }
     
@@ -637,7 +639,7 @@ footer a:hover {
         left: 0;
         width: 100%; /* La bordure couvre toute la largeur du lien */
         height: 2px; /* Épaisseur de la bordure */
-        background-color: transparent; /* Par défaut, invisible */
+        background-color: var(--main-bg-color); 
         transition: background-color 0.3s ease; /* Transition fluide pour la couleur */
     }
 
