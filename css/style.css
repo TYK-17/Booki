@@ -799,7 +799,6 @@ footer a:hover {
     }
 
     .hebergements-and-populaires section {
-        background-color: var(--main-bg-white);
         border-radius: 20px;
         padding: 15px;
         box-sizing: border-box;
@@ -811,6 +810,7 @@ footer a:hover {
 
     #hebergements {
         order: 2; /* La section "Hébergements" en second */
+        background-color: var(--main-bg-white);
     }
 
     #activites {
