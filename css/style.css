@@ -647,7 +647,7 @@ footer a:hover {
         font-size: 24px; /* Taille adaptée pour le titre principal */
         font-weight: bold; /* Texte en gras */
         text-align: left; /* Alignement à gauche */
-        margin: 0 20px 8px; /* Pas de marge en haut, mais espacement en bas */
+        margin: 0 20px 10px 30px; /* Pas de marge en haut, mais espacement en bas */
         line-height: 1.4; /* Espacement entre les lignes */
         color: #000; /* Couleur noire pour le titre */
     }
@@ -656,7 +656,7 @@ footer a:hover {
         font-size: 16px; /* Taille du texte secondaire */
         font-weight: normal; /* Texte en style normal */
         text-align: left; /* Alignement à gauche */
-        margin: 0 20px; /* Suppression de la marge par défaut */
+        margin: 0 30px; /* Suppression de la marge par défaut */
         line-height: 1.6; /* Espacement plus important pour la lisibilité */
         color: #555; /* Couleur grise pour le texte secondaire */
     }
