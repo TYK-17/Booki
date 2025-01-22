@@ -586,10 +586,6 @@ footer a:hover {
         font-size: 22px;
     }
     
-    .hebergements {
-        width: 100%; /* La section occupe toute la largeur */
-    }
-
     /********* Header *********/
 
     header {
@@ -764,8 +760,9 @@ footer a:hover {
         display: flex;
         align-items: center; /* Centre verticalement l'icône et le texte */
         gap: 10px; /* Espace entre l'icône et le texte */
-        padding: 20px;
+        padding: 0 30px;
         margin-top: 30px;
+        margin-bottom: 20px;
         font-size: 16px;
 
     }
@@ -774,10 +771,10 @@ footer a:hover {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 24px; /* Diamètre du cercle */
-        height: 24px;
+        width: 25px;
+        height: 25px;
         border: 1px solid #D3D3D3; /* Bordure grise */
-        border-radius: 50%; /* Cercle parfait */
+        border-radius: 50%;
     }
 
     .icon-circle i {
@@ -839,14 +836,12 @@ footer a:hover {
         align-items: center; /* Centre verticalement l'image et le contenu */
         gap: 20px; /* Espacement entre l'image et le texte */
         width: 90%; /* La carte occupe toute la largeur disponible */
-        border-radius: 15px; /* Coins arrondis pour toute la carte */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet flottant */
 }
 
     .populaires-cards img {
         flex-shrink: 0;
-        width: 30%; /* Largeur fixe pour l'image */
-        height: 100%; /* Hauteur fixe pour garder la proportion */
+        width: 35%; /* Largeur fixe pour l'image */
         border-radius: 15px 0 0 15px; /* Coins arrondis pour toute la carte */
     }
 
@@ -923,7 +918,7 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         background-color: var(----main-bg-color);
-        width: 315px; /* Largeur fixe pour la carte */
+        width: 80%; /* Largeur fixe pour la carte */
         border-radius: 20px; /* Coins arrondis globaux */
         overflow: hidden; /* Coupe le contenu qui dépasse */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
