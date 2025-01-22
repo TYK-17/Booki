@@ -555,7 +555,7 @@ footer a:hover {
 }*/
 
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
 
     body {
         display: flex;
@@ -574,7 +574,7 @@ footer a:hover {
         align-items: center; /* Centre les éléments horizontalement */
         justify-content: center; /* Centre les éléments verticalement */
         width: 100%;
-        max-width: 767.98px; /* Largeur maximale pour rester mobile-friendly */
+        max-width: 768px; /* Largeur maximale pour rester mobile-friendly */
         padding: 0; /* Supprime les marges internes */
         margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
         box-sizing: border-box;
