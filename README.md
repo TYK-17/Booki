@@ -1,18 +1,13 @@
 # booki-starter-pack
 
-<img alt="Simulation du site Booki" src="https://github.com/TYK-17/my-project/tree/test/Booki.png">
+<img alt="Simulation du site Booki" src="https://raw.githubusercontent.com/TYK-17/my-project/tree/test/Booki.png">
 
 ## Français
 
-_Ce travail a été réalisé pour le projet 2 de la formation Développeur Web d'OpenClassrooms._  
-Ce repo contient le code du prototype du site de Booki.  
-Booki est une petite entreprise qui propose à ses utilisateurs de planifier leurs vacances en trouvant un hébergement et des activités sur leur ville de destination. Les utuilisateurs pourront également utiliser des filtres pour visionner les résultats selon une thématique choisie.
-Ce prototype a été créé en utilisant HMTL5 et CSS3.
-
+Maquette pour le projet de la startup Booki :
+Le site Booki permet aux utilisateurs de rechercher et de réserver facilement des hébergements et des activités touristiques. Il vise à offrir une expérience fluide et intuitive grâce à une interface claire, moderne, et accessible sur tous les types d'appareils (ordinateurs, tablettes, smartphones). Le site organise les informations par catégories (hôtels, maisons, activités, etc.) pour simplifier la navigation et la prise de décision des voyageurs.
 ---
 ## English
 
-_This work is the second project of OpenClassrooms Web Developer training._  
-This repo contains the database for Booki's prototype website.  
-Booki is small business which allows users to plan their holidays by finding accomodation and activities in a specific area. The users can also uses filters to browse the results accord to specific thematics.  
-This prototype was created using HTML5 and CSS3.
+Mockup for the Booki Startup Project:
+The Booki website allows users to easily search for and book accommodations and tourist activities. It aims to provide a seamless and intuitive experience through a clear, modern, and accessible interface across all device types (computers, tablets, smartphones). The site organizes information into categories (hotels, houses, activities, etc.) to simplify navigation and help travelers make decisions more easily.
