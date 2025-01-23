@@ -1,6 +1,6 @@
 # booki-starter-pack
 
-<img alt="Simulation du site Booki" src="https://raw.githubusercontent.com/TYK-17/my-project/tree/test/Booki.png">
+<img alt="Maquette du site Booki" src="https://github.com/TYK-17/my-project/tree/test/Booki.png">
 
 ## Français
 
