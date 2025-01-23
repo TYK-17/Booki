@@ -797,21 +797,13 @@ footer a:hover {
         box-sizing: border-box;
     }
 
+
+    /********* Populaires Section *********/
+    
     #populaires {
         order: 1; /* La section "Populaires" en premier */
     }
 
-    #hebergements {
-        order: 2; /* La section "Hébergements" en second */
-        background-color: var(--main-bg-white);
-    }
-
-    #activites {
-        order: 3; /* La section "Activités" en dernier */
-    }
-
-    /********* Populaires Section *********/
-    
     .populaires {
         /*padding: 20px; /* Ajoute de l'espacement autour de la section */
         background-color: var(--main-bg-color);
@@ -871,6 +863,13 @@ footer a:hover {
 
     /********* Hebergements Section *********/
 
+    #hebergements {
+        order: 2; /* La section "Hébergements" en second */
+        background-color: var(--main-bg-white);
+        margin: 20px auto;
+        width: 100%; /* Ajustez cette largeur selon votre design */
+    }
+
      /* Affichage en colonne pour les hébergements */
      .hebergements-cards {
         align-items: center;
@@ -897,8 +896,9 @@ footer a:hover {
     /********* Activités Section *********/
 
     #activites {
-        margin-top: 20px; /* Réduction de la marge pour mobile */
-        margin-bottom: 20px; /* Réduction de la marge inférieure */
+        order: 3; /* La section "Activités" en dernier */
+        margin: 20px auto;
+        width: 100%; /* Ajustez cette largeur selon votre design */
     }
 
     #activites h2 {
@@ -911,7 +911,6 @@ footer a:hover {
         flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
         justify-content: center; /* Centre les cartes horizontalement */
         gap: 15px; /* Espacement entre les cartes */
-        padding: 10px; /* Ajout d'un léger padding interne */
     }
     .activites-cards .card {
         display: flex;
@@ -952,7 +951,8 @@ footer a:hover {
         padding: var(--padding); /* Applique un padding uniforme si nécessaire */
         box-sizing: border-box; /* Inclut le padding dans la largeur totale */
         gap: 20px; /* Espacement entre les sections */
-        margin: 0 auto; /* Centre le footer horizontalement */
+        margin: 20px auto; /* Centre le footer horizontalement */
+        margin-bottom: 0;
     }
     
     footer h4 {
