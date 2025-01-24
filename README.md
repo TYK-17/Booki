@@ -1,6 +1,6 @@
 # booki-starter-pack
 
-![Maquette Booki]("https://github.com/TYK-17/my-project/tree/test/Booki.png")
+![Maquette Booki]("https://github.com/TYK-17/my-project/tree/blob/Booki.png")
 
 ## Français
 
