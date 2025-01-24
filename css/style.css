@@ -29,9 +29,9 @@
 body {
     display: flex;
     flex-direction: column; /* Empile les enfants verticalement */
+    align-items: center;
     min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
     margin: 0; /* Supprime les marges */
-    /*background-color: var(--main-bg-color);*/
     color: var(--text-color);
     min-width: 320px; /* Limite minimale pour un affichage garanti */
 }
