@@ -31,7 +31,7 @@ body {
     flex-direction: column; /* Empile les enfants verticalement */
     min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
     margin: 0; /* Supprime les marges */
-    background-color: var(--main-bg-color);
+    /*background-color: var(--main-bg-color);*/
     color: var(--text-color);
     min-width: 320px; /* Limite minimale pour un affichage garanti */
 }
@@ -336,7 +336,7 @@ nav a:hover::before {
 .hebergements-and-populaires {
     display: flex; /* Place les deux sections sur une ligne */
     justify-content: space-between; /* Espace entre les sections */
-    align-items: flex-start; /* Aligne en haut */
+    align-items: stretch; /* prend toute la place */
     gap: 40px; /* Espace entre les deux sections */
     margin-top: 20px;
 }
