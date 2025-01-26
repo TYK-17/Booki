@@ -9,12 +9,30 @@
 :root {
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
-    --main-bg-white: #ffffff;
-    --search-bg-white: #ffffff;
-    --filter-bg-color: #DEEBFF;
-    --filter-bg-white: #ffffff;
-    --filter-bd-color: #D9D9D9;
-    --text-color: #000000; /* h1 h2 h3 h4 input */
+    --main-bg-desktop-color: #ffffff;
+
+    --header-bg-color: #ffffff;
+    --card-bg-color: #ffffff;
+
+    --star-color: #0065FC;
+    --neutral-star-color: #F2F2F2;
+
+    --search-bg-color: #ffffff;
+    --search-icon-bg-color: #F2F2F2;
+    --search-icon-color: #000000;
+    --search-text-color: #000000;
+    --search-button-color: #0065FC;
+    --search-button-hover-color: #004BB7;
+
+    --filters-bg-color: #ffffff;
+    --filters-bd-color: #D9D9D9;
+    --filters-button-color: #0065FC;
+    --filters-hover-color: #DEEBFF;
+    --filters-text-color: #000000;
+
+    --icon-color: #0065FC;
+
+    --text-color: #000000; /* a h1 h2 h3 h4 input */
     --padding: 20px;
 }
 
@@ -23,7 +41,7 @@
 }
 
 .rating {
-    color: var(--main-color);
+    color: var(--star-color);
 }
 
 body {
@@ -44,7 +62,7 @@ body {
     max-width: 1440px;
     padding: 0 50px;
     box-sizing: border-box;
-    background-color: var(--main-bg-white);
+    background-color: var(--main-bg-desktop);
 }
 
 a {
@@ -62,7 +80,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--header-bg-color);
     margin : 30px 0;
 }
 
@@ -83,8 +101,8 @@ header {
 
 nav {
     display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
-    justify-content: flex-start; /* Centre les liens */
-    align-items: center ; /* Aligne les éléments en haut */
+    justify-content: flex-start;
+    align-items: center ; 
     gap: 50px; /* Ajoute un espace entre les éléments */
 }
 
@@ -98,7 +116,7 @@ nav a {
 nav a::before {
     content: ''; /* Crée un pseudo-élément vide pour la bordure */
     position: absolute;
-    top: -30px; /* Place la bordure 15px au-dessus du texte */
+    top: -30px;
     left: 0;
     width: 100%; /* La bordure couvre toute la largeur du lien */
     height: 2px; /* Épaisseur de la bordure */
@@ -113,7 +131,7 @@ nav a:hover::before {
 
 /********* Cards *********/
 .card {
-    background-color: white;
+    background-color: var(--card-bg-color);
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
@@ -150,7 +168,7 @@ nav a:hover::before {
 }
 
 .neutral-star {
-    color: var(--main-bg-color);
+    color: var(--neutral-star-color);
 }
 
 .hebergements {
@@ -170,11 +188,11 @@ nav a:hover::before {
 }
 
 .search-bar {
-    display: flex; /* Aligne les éléments horizontalement */
-    align-items: center; /* Centre verticalement */
-    background: transparent; /* Fond transparent */
+    display: flex;
+    align-items: center;
+    background: transparent;
     overflow: hidden; /* Coupe les débordements éventuels */
-    width: 40%; /* Largeur précise */
+    width: 40%;
     margin: 20px 0px; /* Espacement interne */
 }
 
@@ -183,7 +201,7 @@ nav a:hover::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F8F9FA; /* Fond gris clair */
+    background-color: var(--search-icon-bg-color); /* Fond gris clair */
     padding: 15px 16px 15px 16px; /* Espacement interne */
     border-top-left-radius: 15px; /* Arrondi gauche supérieur */
     border-bottom-left-radius: 15px; /* Arrondi gauche inférieur */
@@ -193,7 +211,7 @@ nav a:hover::before {
 
 .marker-icon i {
     font-size: 18px; /* Définit la hauteur de l'icône */
-    color: var(--text-color); /* Couleur noire pour l'icône */
+    color: var(--search-icon-color); /* Couleur noire pour l'icône */
     width: 14px; /* Largeur précise */
     height: 18px; /* Hauteur précise */
     display: inline-block; /* Permet de définir largeur/hauteur exactes */
@@ -206,7 +224,7 @@ nav a:hover::before {
     display: flex;
     align-items: center;
     padding: 15px 16px 15px 16px; /* Espacement interne */
-    background-color: white; /* Fond blanc */
+    background-color: var(--search-bg-color); /* Fond blanc */
     flex-grow: 1; /* Permet au champ de texte de s'étendre */
 }
 
@@ -215,20 +233,20 @@ nav a:hover::before {
     outline: none; /* Supprime l'effet de focus */
     text-align: center;
     font-size: 14px; /* Taille du texte */
-    color: #333; /* Couleur du texte */
+    color: var(--search-text-color); /* Couleur du texte */
     width: auto; /* Largeur personnalisée */
 }
 
 /* Style pour le placeholder */
 .search-input input::placeholder {
     font-weight: bold; /* Texte en gras */
-    color: #333; /* Couleur noire */
+    color: var(--search-text-color); /* Couleur noire */
 }
 
 /* Troisième conteneur : Bouton */
 .search-button {
-    background-color: var(--main-color); /* Fond bleu */
-    color: white; /* Texte blanc */
+    background-color: var(--search-button-color);
+    color: var(--search-bg-color);
     font-weight: bold; /* Texte en gras */
     border: none; /* Supprime les bordures */
     border-top-right-radius: 15px; /* Arrondi droit supérieur */
@@ -240,7 +258,7 @@ nav a:hover::before {
 
 /* Changement de couleur au survol */
 .search-button:hover {
-    background-color: #004BB7; /* Fond bleu foncé au survol */
+    background-color: var(--search-button-hover-color); /* Fond bleu foncé au survol */
 }
 
 .search-button .search-text {
@@ -268,19 +286,19 @@ nav a:hover::before {
 
 /* Label "Filtres" */
 .filters-label {
-    display: flex; /* Active Flexbox */
-    align-items: center; /* Centre verticalement l'icône et le texte */
-    font-size: 18px; /* Taille du texte */
+    display: flex;
+    align-items: center;
+    font-size: 18px;
     font-weight: bold; /* Texte en gras */
-    color: #333; /* Couleur du texte noir */
+    color: var(--filters-text-color);
 }
 
 .filters button {
     display: flex; /* Active Flexbox */
     align-items: center; /* Centre verticalement l'icône et le texte */
     gap: 8px; /* Espace entre l'icône et le texte */
-    background-color: var(--filter-bg-white); /* Fond blanc */
-    border: 2px solid var(--filter-bd-color); /* Bordure gris clair */
+    background-color: var(--filters-bg-color); /* Fond blanc */
+    border: 2px solid var(--filters-bd-color); /* Bordure gris clair */
     border-radius: 30px; /* Coins arrondis */
     padding: 10px 20px; /* Espacement interne */
     font-size: 14px; /* Taille du texte */
@@ -293,17 +311,17 @@ nav a:hover::before {
 /* Icônes dans les boutons */
 .filters button i {
     font-size: 16px; /* Taille de l'icône */
-    color: var(--main-color); /* Couleur de l'icône bleue */
+    color: var(--filters-button-color); /* Couleur de l'icône bleue */
 }
 
 /* Effet au survol des boutons */
 .filters button:hover {
-    background-color: var(--filter-bg-color); /* Fond bleu au survol */
-    color: var(--text-color); /* Texte noir au survol */
+    background-color: var(--filters-hover-color); /* Fond bleu au survol */
+    color: var(--filters-text-color); /* Texte noir au survol */
 }
 
 .filters button:hover i {
-    color: var(--main-color); /* Icône bleue au survol */
+    color: var(--filters-button-color); /* Icône bleue au survol */
 }
 
 /********* info bar *********/
@@ -322,12 +340,12 @@ nav a:hover::before {
     justify-content: center;
     width: 30px; /* Diamètre du cercle */
     height: 30px;
-    border: 2px solid #D3D3D3; /* Bordure grise */
+    border: 2px solid #D9D9D9; /* Bordure grise */
     border-radius: 50%; /* Cercle parfait */
 }
 
 .icon-circle i {
-    color: var(--main-color); /* Couleur bleue pour l'icône */
+    color: var(--icon-color); /* Couleur bleue pour l'icône */
     font-size: 16px; /* Taille de l'icône */
 }
 
@@ -578,7 +596,7 @@ footer a:hover {
         padding: 0; /* Supprime les marges internes */
         margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
         box-sizing: border-box;
-        background-color: var(--main-bg-white);
+        background-color: var(--main-bg-desktop);
     }
         
     .section-title {
@@ -870,7 +888,7 @@ footer a:hover {
 
     #hebergements {
         order: 2; /* La section "Hébergements" en second */
-        background-color: var(--main-bg-white);
+        background-color: var(--main-bg-desktop);
         margin: 20px auto;
         width: 100%; /* Ajustez cette largeur selon votre design */
     }
@@ -881,7 +899,7 @@ footer a:hover {
         grid-template-columns: 1fr; /* Une seule colonne */
         gap: 20px; /* Espace entre les cartes */
         padding: 0; /* Réduction du padding pour mobile */
-        background-color: var(--main-bg-white);
+        background-color: var(--main-bg-desktop);
     }
 
     .hebergements .card img {
@@ -894,7 +912,7 @@ footer a:hover {
     .show-more {
         display: flex;
         justify-content: flex-start;
-        background-color: var(--main-bg-white);
+        background-color: var(--main-bg-desktop);
         margin: 10px;
     }
     
