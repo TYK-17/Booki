@@ -7,12 +7,22 @@
 }
 
 :root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --main-bg-desktop-color: #ffffff;
+    --fa-color: #0065FC;
+    --main-bg-color: #ffffff;
+
+    --body-text-color: #000000;
+    --body-phone-bg-color: #ffffff;
+    --body-phone-text-color: #000000;
+
+    --nav-text-color: #000000;
+    --nav-hover-color: #0065FC;
+    --nav-phone-text-color: #000000;
+    --nav-phone-bg-color: #F2F2F2;
+    --nav-phone-hover-color: #0065FC;
 
     --header-bg-color: #ffffff;
-    --card-bg-color: #ffffff;
+    --header-text-color: #000000;
+    --cards-bg-color: #ffffff;
 
     --star-color: #0065FC;
     --neutral-star-color: #F2F2F2;
@@ -32,12 +42,25 @@
 
     --icon-color: #0065FC;
 
-    --text-color: #000000; /* a h1 h2 h3 h4 input */
+    --hebergements-bg-color: #F2F2F2;
+    --hebergements-text-color: #000000;
+    --hebergements-phone-bg-color: #ffffff;
+
+    --populaires-phone-bg-color:#F2F2F2;
+
+    --show-text-color: #000000;
+    --show-hover-color: #0065FC;
+    --show-phone-bg-color: #ffffff;
+
+    --footer-bg-color: #F2F2F2;
+    --footer-text-color: #000000;
+    --footer-hover-color: #0065FC;
+    
     --padding: 20px;
 }
 
 .fa-solid {
-    color: var(--main-color);
+    color: var(--fa-color);
 }
 
 .rating {
@@ -50,7 +73,7 @@ body {
     align-items: center;
     min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
     margin: 0; /* Supprime les marges */
-    color: var(--text-color);
+    color: var(--body-text-color);
     min-width: 320px; /* Limite minimale pour un affichage garanti */
 }
 
@@ -62,7 +85,7 @@ body {
     max-width: 1440px;
     padding: 0 50px;
     box-sizing: border-box;
-    background-color: var(--main-bg-desktop);
+    background-color: var(--main-bg-color);
 }
 
 a {
@@ -107,7 +130,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--header-text-color);
     font-size: 16px;
     position: relative; 
     transition: all 0.3s ease; /* Animation fluide pour l'effet */
@@ -126,12 +149,12 @@ nav a::before {
 
 /* Changement de couleur et ajout de bordure au survol */
 nav a:hover::before {
-    background-color: var(--main-color);
+    background-color: var(--nav-hover-color);
 }
 
 /********* Cards *********/
 .card {
-    background-color: var(--card-bg-color);
+    background-color: var(--cards-bg-color);
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
@@ -303,7 +326,7 @@ nav a:hover::before {
     padding: 10px 20px; /* Espacement interne */
     font-size: 14px; /* Taille du texte */
     font-weight: bold; /* Texte en gras */
-    color: var(--text-color); /* Couleur du texte bleu */
+    color: var(--filters-text-color);
     cursor: pointer; /* Curseur main au survol */
     transition: background-color 0.3s ease, color 0.3s ease; /* Animation au survol */
 }
@@ -361,7 +384,7 @@ nav a:hover::before {
 
 
 .hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
+    background-color: var(--hebergements-bg-color);
     border-radius: 20px;
     padding: 15px;
     box-sizing: border-box;
@@ -375,7 +398,6 @@ nav a:hover::before {
     gap: 30px; /* Espace entre les cartes */
     margin-top: 20px;
     padding: 20px; /* Ajoute un espacement interne */
-    background-color: var(--main-bg-color); /* Fond gris clair */
     border-radius: 10px; /* Coins arrondis */
 }
 
@@ -399,7 +421,7 @@ nav a:hover::before {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: var(--text-color);
+    color: var(--show-text-color);
     font-weight: bold;
     font-size: 20px;
     border: none;
@@ -412,7 +434,7 @@ nav a:hover::before {
 }
 
 .show-more:hover {
-    background-color: var(--main-color);
+    background-color: var(--show-hover-color);
 }
 
 /********* Populaires Section *********/
@@ -510,12 +532,12 @@ footer {
     display: flex;
     justify-content: space-around;
     padding: var(--padding);
-    background-color: var(--main-bg-color);
+    background-color: var(--footer-bg-color);
 }
 
 footer h4 {
     font-size: 18px;
-    color: var(--text-color);
+    color: var(--footer-text-color);
     margin-bottom: 10px;
 }
 
@@ -529,13 +551,13 @@ footer ul li {
 }
 
 footer a {
-    color: var(--text-color);
+    color: var(--footer-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: var(--main-color);
+    color: var(--footer-hover-color);
 }
 
 /********* Responsive Design *********/
@@ -580,23 +602,17 @@ footer a:hover {
         flex-direction: column; /* Empile les enfants verticalement */
         min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
         margin: 0; /* Supprime les marges */
-        background-color: var(--main-bg-color);
-        color: var(--text-color);
+        background-color: var(--body-phone-bg-color);
+        color: var(--body-phone-text-color);
         min-width: 320px; /* Limite minimale pour un affichage garanti */
     }
     
     .main-container {
-        flex: 1; /* Prend tout l'espace disponible pour pousser le footer vers le bas */
-        display: flex;
-        flex-direction: column; /* Empile les sections verticalement */
         align-items: center; /* Centre les éléments horizontalement */
         justify-content: center; /* Centre les éléments verticalement */
-        width: 100%;
         max-width: 768px; /* Largeur maximale pour rester mobile-friendly */
         padding: 0; /* Supprime les marges internes */
         margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
-        box-sizing: border-box;
-        background-color: var(--main-bg-desktop);
     }
         
     .section-title {
@@ -633,7 +649,7 @@ footer a:hover {
         text-align: center;
         text-decoration: none;
         font-size: 16px;
-        color: black;
+        color: var(--nav-phone-text-color);
         position: relative;
         padding: 10px 0p;
         transition: all 0.3s ease; /* Transition fluide */
@@ -652,13 +668,13 @@ footer a:hover {
         left: 0;
         width: 100%; /* La bordure couvre toute la largeur du lien */
         height: 2px; /* Épaisseur de la bordure */
-        background-color: var(--main-bg-color); 
+        background-color: var(--nav-phone-bg-color); 
         transition: background-color 0.3s ease; /* Transition fluide pour la couleur */
     }
 
     /* Style pour le lien actif (ciblé avec :target, si applicable) */
     nav a:hover::after {
-    background-color: var(--main-color); /* Bordure bleue pour le lien actif */
+    background-color: var(--nav-phone-hover-color); /* Bordure bleue pour le lien actif */
     }
 
     .hebergements h1 {
@@ -667,7 +683,7 @@ footer a:hover {
         text-align: left; /* Alignement à gauche */
         margin: 0 20px 10px 30px; /* Pas de marge en haut, mais espacement en bas */
         line-height: 1.4; /* Espacement entre les lignes */
-        color: var(--text-color); /* Couleur noire pour le titre */
+        color: var(--hebergements-text-color); /* Couleur noire pour le titre */
     }
     
     .hebergements p {
@@ -676,7 +692,7 @@ footer a:hover {
         text-align: left; /* Alignement à gauche */
         margin: 0 30px; /* Suppression de la marge par défaut */
         line-height: 1.6; /* Espacement plus important pour la lisibilité */
-        color: #555; /* Couleur grise pour le texte secondaire */
+        color: var(--hebergements-text-color);
     }
     
     /********* Search Bar *********/
@@ -700,7 +716,7 @@ footer a:hover {
         display: flex;
         align-items: center;
         padding: 15px 16px 15px 16px; /* Espacement interne */
-        background-color: white; /* Fond blanc */
+        background-color: var(--search-bg-color);
         flex-grow: 1; /* Permet au champ de texte de s'étendre */
     }
     
@@ -708,15 +724,15 @@ footer a:hover {
         border: none; /* Supprime les bordures */
         outline: none; /* Supprime l'effet de focus */
         text-align: center;
-        font-size: 18px; /* Taille du texte */
-        color: var(--text-color); /* Couleur du texte */
+        font-size: 18px;
+        color: var(--search-text-color);
         width: auto; /* Largeur personnalisée */
     }
     
     /* Style pour le placeholder */
     .search-input input::placeholder {
         font-weight: bold; /* Texte en gras */
-        color: var(--text-color); /* Couleur noire */
+        color: var(--search-text-color);
     }
 
     .search-button {
@@ -796,7 +812,7 @@ footer a:hover {
     }
 
     .icon-circle i {
-        color: var(--main-color); /* Couleur bleue pour l'icône */
+        color: var(--icon-color); /* Couleur bleue pour l'icône */
         font-size: 10px; /* Taille de l'icône */
     }
 
@@ -823,7 +839,7 @@ footer a:hover {
     }
 
     .populaires {
-        background-color: var(--main-bg-color);
+        background-color: var(--populaires-phone-bg-color);
         width: 100%;
     }
 
@@ -888,7 +904,7 @@ footer a:hover {
 
     #hebergements {
         order: 2; /* La section "Hébergements" en second */
-        background-color: var(--main-bg-desktop);
+        background-color: var(--hebergements-phone-bg-color);
         margin: 20px auto;
         width: 100%; /* Ajustez cette largeur selon votre design */
     }
@@ -899,7 +915,7 @@ footer a:hover {
         grid-template-columns: 1fr; /* Une seule colonne */
         gap: 20px; /* Espace entre les cartes */
         padding: 0; /* Réduction du padding pour mobile */
-        background-color: var(--main-bg-desktop);
+        background-color: var(--hebergements-phone-bg-color);
     }
 
     .hebergements .card img {
@@ -912,7 +928,7 @@ footer a:hover {
     .show-more {
         display: flex;
         justify-content: flex-start;
-        background-color: var(--main-bg-desktop);
+        background-color: var(--show-phone-bg-color);
         margin: 10px;
     }
     
@@ -939,7 +955,7 @@ footer a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: var(----main-bg-color);
+        background-color: var(--cards-bg-color);
         width: 80%; /* Largeur fixe pour la carte */
         border-radius: 20px; /* Coins arrondis globaux */
         overflow: hidden; /* Coupe le contenu qui dépasse */
@@ -958,7 +974,7 @@ footer a:hover {
         margin-top: 10px; /* Réduction de la marge supérieure */
         margin-bottom: 10px; /* Réduction de la marge inférieure */
         margin-left: 5px;
-        text-align: left; /* Aligne le texte à gauche */
+        text-align: left;
         font-size: 14px; /* Réduction de la taille du texte pour mobile */
         width: 90%; /* Limite la largeur du texte */
         padding: 5px; /* Ajoute un léger padding interne */
@@ -968,19 +984,19 @@ footer a:hover {
     footer {
         display: flex;
         flex-direction: column; /* Empile les sections verticalement */
-        background-color: var(--main-bg-color);
+        background-color: var(--footer-bg-color);
         max-width: 100%; /* Assure que le footer occupe la même largeur */
         width: 100%; /* Prend la largeur complète de son conteneur parent */
         padding: var(--padding); /* Applique un padding uniforme si nécessaire */
         box-sizing: border-box; /* Inclut le padding dans la largeur totale */
         gap: 20px; /* Espacement entre les sections */
-        margin: 20px auto; /* Centre le footer horizontalement */
+        margin: 20px auto;
         margin-bottom: 0;
     }
     
     footer h4 {
         font-size: 18px;
-        color: var(--text-color);
+        color: var(--footer-text-color);
         margin-bottom: 10px;
     }
     
@@ -996,13 +1012,13 @@ footer a:hover {
     }
     
     footer a {
-        color: var(--text-color);
+        color: var(--footer-text-color);
         text-decoration: none;
         transition: color 0.3s ease;
     }
     
     footer a:hover {
-        color: var(--main-color);
+        color: var(--footer-hover-color);
     }
     
 }
