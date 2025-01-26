@@ -12,7 +12,6 @@
 
     --body-text-color: #000000;
     --body-phone-bg-color: #ffffff;
-    --body-phone-text-color: #000000;
 
     --nav-text-color: #000000;
     --nav-hover-color: #0065FC;
@@ -515,8 +514,8 @@ nav a:hover::before {
     width: 100%; /* Définit une largeur fixe */
     height: 380px; /* Définit une hauteur fixe */
     object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
-    border-bottom-left-radius: 0px; /* Coin arrondi en bas à gauche */
-    border-bottom-right-radius: 0px; /* Coin droit en bas à droite */
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .activites-cards .card h3 {
@@ -561,27 +560,37 @@ footer a:hover {
 }
 
 /********* Responsive Design *********/
-/*@media (max-width: 1024px) {
-    .hebergements-and-populaires {
-        flex-direction: column;
-    }
+@media (max-width: 1024px) {
 
-    .hebergements {
-        width: 100%;
+    .hebergements-and-populaires {
+        flex-direction: column; /* Empile les sections verticalement */
     }
 
     .populaires {
+        display: flex; /* Active Flexbox */
+        flex-direction: column; /* Permet aux enfants de s'organiser */
+        align-items: center; /* Centre les cartes horizontalement */
+        margin-top: 20px;
         width: 100%;
-        margin-top: 50px;
-    }
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
     }
 
-    .populaires-cards a {
-        width: 30%;
+    .populaires-cards {
+        display: flex;
+        flex-direction: row; /* Aligne les cartes horizontalement */
+        justify-content: center; /* Centre les cartes dans leur conteneur */
+        align-items: flex-start; /* Ajuste l'alignement vertical des cartes */
+        gap: 20px; /* Espace uniforme entre les cartes */
+    }
+
+    .populaires-cards .card {
+        flex: 0 1 calc(33.33% - 20px); /* Chaque carte occupe environ 1/3 de la largeur disponible */
+        max-width: 1024px; /* Largeur maximale pour limiter la taille */
+        height: auto; /* Ajuste automatiquement la hauteur */
+    }
+
+
+    .populaires-cards {
+        
     }
 
     .populaires-cards .card-title {
@@ -592,19 +601,13 @@ footer a:hover {
         font-size: 13px;
     }
 
-}*/
+}
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 768px) {
 
     body {
-        display: flex;
-        flex-direction: column; /* Empile les enfants verticalement */
-        min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
-        margin: 0; /* Supprime les marges */
         background-color: var(--body-phone-bg-color);
-        color: var(--body-phone-text-color);
-        min-width: 320px; /* Limite minimale pour un affichage garanti */
     }
     
     .main-container {
@@ -615,17 +618,12 @@ footer a:hover {
         margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
     }
         
-    .section-title {
-        margin: 0;
-        font-size: 22px;
-    }
     
     /********* Header *********/
 
     header {
         display: flex;
         flex-direction: column; /* Aligne les éléments verticalement */
-        align-items: center; /* Centre horizontalement le logo et la navigation */
         width: 100%;
         margin-top: 20px; /* Espacement au-dessus du header */
     }
@@ -648,11 +646,8 @@ footer a:hover {
         flex: 1; /* Permet aux liens de prendre une largeur égale */
         text-align: center;
         text-decoration: none;
-        font-size: 16px;
         color: var(--nav-phone-text-color);
-        position: relative;
         padding: 10px 0p;
-        transition: all 0.3s ease; /* Transition fluide */
     }
     
     /* Désactiver ::after dans ce contexte */
@@ -698,26 +693,13 @@ footer a:hover {
     /********* Search Bar *********/
 
     .search-form {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin: 20px;
     }
 
     .search-bar {
-        display: flex;
-        align-items: center; /* Centre les liens */
         justify-content: center; /* Centre les liens horizontalement */
         width: 100%; /* Prend toute la largeur disponible */
         margin: 20px; /* Centre horizontalement */
-    }
-
-    .search-input {
-        display: flex;
-        align-items: center;
-        padding: 15px 16px 15px 16px; /* Espacement interne */
-        background-color: var(--search-bg-color);
-        flex-grow: 1; /* Permet au champ de texte de s'étendre */
     }
     
     .search-input input {
@@ -727,12 +709,6 @@ footer a:hover {
         font-size: 18px;
         color: var(--search-text-color);
         width: auto; /* Largeur personnalisée */
-    }
-    
-    /* Style pour le placeholder */
-    .search-input input::placeholder {
-        font-weight: bold; /* Texte en gras */
-        color: var(--search-text-color);
     }
 
     .search-button {
@@ -764,17 +740,16 @@ footer a:hover {
         justify-content: center; /* Centrage horizontal des éléments */
         align-items: center; /* Centrage vertical des éléments dans la grille */
         width: 100%; /* La grille occupe toute la largeur disponible */
-        max-width: 400px; /* Limite la largeur totale */
-        padding: 0 20px 0 20px;
+        padding: 0 30px;
     }
 
     /* Label "Filtres" */
     .filters-label {
-        font-size: 16px; /* Réduction de la taille du texte */
+        font-size: 16px;
         margin-bottom: 10px; /* Ajout d'un espacement sous le label */
-        padding: 0 20px;
-        justify-content: left; /* Centrage horizontal du label */
-        text-align: center; /* Texte centré */
+        padding: 0 30px;
+        justify-content: left;
+        text-align: center;
     }
 
     .filters button {
@@ -791,9 +766,6 @@ footer a:hover {
     /********* info bar *********/
 
     .info-container {
-        display: flex;
-        align-items: center; /* Centre verticalement l'icône et le texte */
-        gap: 10px; /* Espace entre l'icône et le texte */
         padding: 0 30px;
         margin-top: 30px;
         margin-bottom: 20px;
@@ -802,33 +774,26 @@ footer a:hover {
     }
 
     .icon-circle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 25px;
         height: 25px;
-        border: 1px solid #D3D3D3; /* Bordure grise */
-        border-radius: 50%;
+        border: 1px solid var(--filters-bd-color);    
     }
 
     .icon-circle i {
-        color: var(--icon-color); /* Couleur bleue pour l'icône */
-        font-size: 10px; /* Taille de l'icône */
+        font-size: 10px;
     }
 
     /********* Hebergements And Populaires *********/
 
     .hebergements-and-populaires {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 0;
+        gap: 0;
     }
 
     .hebergements-and-populaires section {
-        border-radius: 20px;
         padding: 30px;
-        box-sizing: border-box;
     }
 
 
@@ -844,9 +809,7 @@ footer a:hover {
     }
 
     .populaires-title {
-        display: flex;
         justify-content: left;
-        align-items: center;
         margin-bottom: 0;
         gap: 90px;
     }
@@ -859,13 +822,13 @@ footer a:hover {
     }
     
     .populaires-cards .card {
-        display: flex; /* Utilise Flexbox pour aligner l'image et le texte horizontalement */
         align-items: center; /* Centre verticalement l'image et le contenu */
         gap: 20px; /* Espacement entre l'image et le texte */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet flottant */
         width: 350px; /* largeur fixe */
         height: auto; /* Fixez une hauteur uniforme */
         overflow: hidden;
+        margin-top: 20px;
     }
 
     .populaires-cards img {
@@ -873,7 +836,6 @@ footer a:hover {
         width: 35%; /* Largeur fixe pour l'image */
         overflow: hidden;
         border-radius: 15px 0 0 15px; /* Coins arrondis pour toute la carte */
-        object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
     }
 
     .populaires-cards .card-content {
@@ -883,21 +845,9 @@ footer a:hover {
         justify-content: space-between;
         box-sizing: border-box;
     }
-
-    .populaires-cards .card-title {
-        margin-top: 10px;
-        margin-bottom: 4px;
-        display: inline-block; /* Permet au conteneur de s'ajuster automatiquement à la largeur du texte */
-        overflow: visible; /* Permet au texte de s'afficher intégralement */
-    }
-    
-    .populaires-cards .card-subtitle {
-        margin: 0;
-    }
     
     .populaires-cards .card-rating {
         margin-top: 60px; /* Positionne la note en bas du conteneur */
-        margin-bottom: 5px; /* Espacement avec le bas */
     }
 
     /********* Hebergements Section *********/
@@ -905,7 +855,6 @@ footer a:hover {
     #hebergements {
         order: 2; /* La section "Hébergements" en second */
         background-color: var(--hebergements-phone-bg-color);
-        margin: 20px auto;
         width: 100%; /* Ajustez cette largeur selon votre design */
     }
 
@@ -919,15 +868,12 @@ footer a:hover {
     }
 
     .hebergements .card img {
-        border-radius: 10px;
         width: 100%;
         border-top-left-radius: 0px; /* Coin arrondi en bas à gauche */
         border-top-right-radius: 0px; /* Coin droit en bas à droite */
     }
 
     .show-more {
-        display: flex;
-        justify-content: flex-start;
         background-color: var(--show-phone-bg-color);
         margin: 10px;
     }
@@ -936,7 +882,7 @@ footer a:hover {
 
     #activites {
         order: 3; /* La section "Activités" en dernier */
-        margin: 20px auto;
+        margin: 0 auto;
         width: 100%; /* Ajustez cette largeur selon votre design */
     }
 
@@ -952,13 +898,10 @@ footer a:hover {
         gap: 15px; /* Espacement entre les cartes */
     }
     .activites-cards .card {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         background-color: var(--cards-bg-color);
         width: 80%; /* Largeur fixe pour la carte */
         border-radius: 20px; /* Coins arrondis globaux */
-        overflow: hidden; /* Coupe le contenu qui dépasse */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
     }
 
@@ -966,7 +909,6 @@ footer a:hover {
         border-radius: 20px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-        width: 100%;
         height: 150px;
     }
 
@@ -974,7 +916,6 @@ footer a:hover {
         margin-top: 10px; /* Réduction de la marge supérieure */
         margin-bottom: 10px; /* Réduction de la marge inférieure */
         margin-left: 5px;
-        text-align: left;
         font-size: 14px; /* Réduction de la taille du texte pour mobile */
         width: 90%; /* Limite la largeur du texte */
         padding: 5px; /* Ajoute un léger padding interne */
@@ -982,43 +923,18 @@ footer a:hover {
 
     /********* Footer *********/
     footer {
-        display: flex;
         flex-direction: column; /* Empile les sections verticalement */
-        background-color: var(--footer-bg-color);
         max-width: 100%; /* Assure que le footer occupe la même largeur */
         width: 100%; /* Prend la largeur complète de son conteneur parent */
-        padding: var(--padding); /* Applique un padding uniforme si nécessaire */
         box-sizing: border-box; /* Inclut le padding dans la largeur totale */
         gap: 20px; /* Espacement entre les sections */
         margin: 20px auto;
         margin-bottom: 0;
     }
     
-    footer h4 {
-        font-size: 18px;
-        color: var(--footer-text-color);
-        margin-bottom: 10px;
-    }
-    
     footer ul {
         font-size: 16px;
-        list-style: none;
-        padding: 0;
         margin: 0;
-    }
-    
-    footer ul li {
-        margin-bottom: 10px;
-    }
-    
-    footer a {
-        color: var(--footer-text-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    footer a:hover {
-        color: var(--footer-hover-color);
     }
     
 }
