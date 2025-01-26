@@ -14,7 +14,7 @@
     --filter-bg-color: #DEEBFF;
     --filter-bg-white: #ffffff;
     --filter-bd-color: #D9D9D9;
-    --text-color: #000000;
+    --text-color: #000000; /* h1 h2 h3 h4 input */
     --padding: 20px;
 }
 
@@ -193,7 +193,7 @@ nav a:hover::before {
 
 .marker-icon i {
     font-size: 18px; /* Définit la hauteur de l'icône */
-    color: #000; /* Couleur noire pour l'icône */
+    color: var(--text-color); /* Couleur noire pour l'icône */
     width: 14px; /* Largeur précise */
     height: 18px; /* Hauteur précise */
     display: inline-block; /* Permet de définir largeur/hauteur exactes */
@@ -227,7 +227,7 @@ nav a:hover::before {
 
 /* Troisième conteneur : Bouton */
 .search-button {
-    background-color: #0065FC; /* Fond bleu */
+    background-color: var(--main-color); /* Fond bleu */
     color: white; /* Texte blanc */
     font-weight: bold; /* Texte en gras */
     border: none; /* Supprime les bordures */
@@ -327,7 +327,7 @@ nav a:hover::before {
 }
 
 .icon-circle i {
-    color: #0065FC; /* Couleur bleue pour l'icône */
+    color: var(--main-color); /* Couleur bleue pour l'icône */
     font-size: 16px; /* Taille de l'icône */
 }
 
@@ -640,7 +640,7 @@ footer a:hover {
 
     /* Style pour le lien actif (ciblé avec :target, si applicable) */
     nav a:hover::after {
-    background-color: #0065FC; /* Bordure bleue pour le lien actif */
+    background-color: var(--main-color); /* Bordure bleue pour le lien actif */
     }
 
     .hebergements h1 {
@@ -649,7 +649,7 @@ footer a:hover {
         text-align: left; /* Alignement à gauche */
         margin: 0 20px 10px 30px; /* Pas de marge en haut, mais espacement en bas */
         line-height: 1.4; /* Espacement entre les lignes */
-        color: #000; /* Couleur noire pour le titre */
+        color: var(--text-color); /* Couleur noire pour le titre */
     }
     
     .hebergements p {
@@ -778,7 +778,7 @@ footer a:hover {
     }
 
     .icon-circle i {
-        color: #0065FC; /* Couleur bleue pour l'icône */
+        color: var(--main-color); /* Couleur bleue pour l'icône */
         font-size: 10px; /* Taille de l'icône */
     }
 
@@ -786,7 +786,7 @@ footer a:hover {
 
     .hebergements-and-populaires {
         display: flex;
-        flex-direction: column; /* Empile les sections verticalement */
+        flex-direction: column;
         align-items: center;
         margin-top: 0;
     }
@@ -805,7 +805,6 @@ footer a:hover {
     }
 
     .populaires {
-        /*padding: 20px; /* Ajoute de l'espacement autour de la section */
         background-color: var(--main-bg-color);
         width: 100%;
     }
@@ -819,6 +818,8 @@ footer a:hover {
     }
 
     .populaires-cards {
+        display: flex;
+        align-items: center;
         width: 100%;
         flex-direction: column;
     }
@@ -827,14 +828,18 @@ footer a:hover {
         display: flex; /* Utilise Flexbox pour aligner l'image et le texte horizontalement */
         align-items: center; /* Centre verticalement l'image et le contenu */
         gap: 20px; /* Espacement entre l'image et le texte */
-        width: 90%; /* La carte occupe toute la largeur disponible */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet flottant */
-}
+        width: 350px; /* largeur fixe */
+        height: auto; /* Fixez une hauteur uniforme */
+        overflow: hidden;
+    }
 
     .populaires-cards img {
-        flex-shrink: 0;
+        flex-shrink: 0; /* empeche le retrecsissement de l'image */
         width: 35%; /* Largeur fixe pour l'image */
+        overflow: hidden;
         border-radius: 15px 0 0 15px; /* Coins arrondis pour toute la carte */
+        object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
     }
 
     .populaires-cards .card-content {
