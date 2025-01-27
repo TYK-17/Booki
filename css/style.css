@@ -40,6 +40,7 @@
     --filters-text-color: #000000;
 
     --icon-color: #0065FC;
+    --icon-bd-color: #D9D9D9;
 
     --hebergements-bg-color: #F2F2F2;
     --hebergements-text-color: #000000;
@@ -55,7 +56,6 @@
     --footer-text-color: #000000;
     --footer-hover-color: #0065FC;
     
-    --padding: 20px;
 }
 
 .fa-solid {
@@ -67,9 +67,9 @@
 }
 
 body {
-    display: flex;
+    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
     flex-direction: column; /* Empile les enfants verticalement */
-    align-items: center;
+    align-items: center;  /* Ajuste l'alignement des cartes */
     min-height: 100vh; /* S'assure que la hauteur minimale est la hauteur de la fenêtre */
     margin: 0; /* Supprime les marges */
     color: var(--body-text-color);
@@ -79,10 +79,10 @@ body {
 .main-container {
     flex: 1; /* Prend tout l'espace disponible pour pousser le footer vers le bas */
     display: flex;
-    flex-direction: column; /* Empile les sections verticalement */
+    flex-direction: column;
     width: 100%;
     max-width: 1440px;
-    padding: 0 50px;
+    padding: 0 50px; /* Espacement interne */
     box-sizing: border-box;
     background-color: var(--main-bg-color);
 }
@@ -94,13 +94,13 @@ a {
 
 .section-title {
     margin: 0;
-    font-size: 22px;
+    font-size: 22px; /* Taille du texte */
 }
 
 /********* Header *********/
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espace entre les sections */
     align-items: center;
     background-color: var(--header-bg-color);
     margin : 30px 0;
@@ -122,7 +122,7 @@ header {
 }
 
 nav {
-    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+    display: flex;
     justify-content: flex-start;
     align-items: center ; 
     gap: 50px; /* Ajoute un espace entre les éléments */
@@ -140,10 +140,10 @@ nav a::before {
     position: absolute;
     top: -30px;
     left: 0;
-    width: 100%; /* La bordure couvre toute la largeur du lien */
+    width: 100%; /* Limite relative de la largeur du texte */
     height: 2px; /* Épaisseur de la bordure */
-    background-color: transparent; /* La bordure est invisible par défaut */
-    transition: background-color 0.3s ease; /* Animation fluide pour l'apparition */
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
 /* Changement de couleur et ajout de bordure au survol */
@@ -157,10 +157,10 @@ nav a:hover::before {
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    display: block; /* Transforme la carte en un élément bloc pour couvrir l'ensemble du contenu */
+    display: block;
     text-decoration: none; /* Supprime les soulignements sur les textes des liens */
     color: inherit; /* Conserve la couleur du texte de la carte */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute des animations pour un effet visuel au survol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -169,7 +169,7 @@ nav a:hover::before {
 }
 
 .card img {
-    object-fit: cover;
+    object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
     width: 100%;
     border-radius: 15px 15px 0 0;
     height: 150px;
@@ -215,7 +215,7 @@ nav a:hover::before {
     background: transparent;
     overflow: hidden; /* Coupe les débordements éventuels */
     width: 40%;
-    margin: 20px 0px; /* Espacement interne */
+    margin: 20px 0px;
 }
 
 /* Premier conteneur : Icône */
@@ -223,30 +223,30 @@ nav a:hover::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--search-icon-bg-color); /* Fond gris clair */
+    background-color: var(--search-icon-bg-color);
     padding: 15px 16px 15px 16px; /* Espacement interne */
     border-top-left-radius: 15px; /* Arrondi gauche supérieur */
     border-bottom-left-radius: 15px; /* Arrondi gauche inférieur */
-    width: 50px; /* Largeur précise */
-    height: 49px; /* Hauteur précise */
+    width: 50px; /* Limite absolu de la largeur du texte */
+    height: 49px; /* Limite absolu de la hauteur du texte */
 }
 
 .marker-icon i {
-    font-size: 18px; /* Définit la hauteur de l'icône */
-    color: var(--search-icon-color); /* Couleur noire pour l'icône */
-    width: 14px; /* Largeur précise */
-    height: 18px; /* Hauteur précise */
-    display: inline-block; /* Permet de définir largeur/hauteur exactes */
+    font-size: 18px;
+    color: var(--search-icon-color);
+    width: 14px;
+    height: 18px;
+    display: inline-block;
     line-height: 18px; /* Centre l'icône verticalement */
-    text-align: center; /* Centre l'icône horizontalement */
+    text-align: center;
 }
 
 /* Deuxième conteneur : Champ de recherche */
 .search-input {
     display: flex;
     align-items: center;
-    padding: 15px 16px 15px 16px; /* Espacement interne */
-    background-color: var(--search-bg-color); /* Fond blanc */
+    padding: 15px 16px 15px 16px;
+    background-color: var(--search-bg-color);
     flex-grow: 1; /* Permet au champ de texte de s'étendre */
 }
 
@@ -254,33 +254,33 @@ nav a:hover::before {
     border: none; /* Supprime les bordures */
     outline: none; /* Supprime l'effet de focus */
     text-align: center;
-    font-size: 14px; /* Taille du texte */
-    color: var(--search-text-color); /* Couleur du texte */
-    width: auto; /* Largeur personnalisée */
+    font-size: 14px;
+    color: var(--search-text-color);
+    width: auto;
 }
 
 /* Style pour le placeholder */
 .search-input input::placeholder {
     font-weight: bold; /* Texte en gras */
-    color: var(--search-text-color); /* Couleur noire */
+    color: var(--search-text-color);
 }
 
 /* Troisième conteneur : Bouton */
 .search-button {
     background-color: var(--search-button-color);
     color: var(--search-bg-color);
-    font-weight: bold; /* Texte en gras */
-    border: none; /* Supprime les bordures */
-    border-top-right-radius: 15px; /* Arrondi droit supérieur */
-    border-bottom-right-radius: 15px; /* Arrondi droit inférieur */
-    padding: 15px 16px 15px 16px; /* Espacement interne pour ajuster la taille */
-    font-size: 16px; /* Taille du texte */
+    font-weight: bold;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 15px 16px 15px 16px;
+    font-size: 16px;
     cursor: pointer; /* Curseur main au survol */
 }
 
 /* Changement de couleur au survol */
 .search-button:hover {
-    background-color: var(--search-button-hover-color); /* Fond bleu foncé au survol */
+    background-color: var(--search-button-hover-color);
 }
 
 .search-button .search-text {
@@ -296,12 +296,12 @@ nav a:hover::before {
 /* Conteneur général */
 .filters {
     display: flex;
-    gap: 15px; /* Espacement entre les boutons */
+    gap: 15px;
 }
 
 /* Boutons de filtre */
 .filters-container {
-    display: flex; /* Place les boutons sur une seule ligne */
+    display: flex;
     gap: 15px;
     margin-top: 20px;
 }
@@ -311,47 +311,47 @@ nav a:hover::before {
     display: flex;
     align-items: center;
     font-size: 18px;
-    font-weight: bold; /* Texte en gras */
+    font-weight: bold;
     color: var(--filters-text-color);
 }
 
 .filters button {
-    display: flex; /* Active Flexbox */
-    align-items: center; /* Centre verticalement l'icône et le texte */
-    gap: 8px; /* Espace entre l'icône et le texte */
-    background-color: var(--filters-bg-color); /* Fond blanc */
-    border: 2px solid var(--filters-bd-color); /* Bordure gris clair */
-    border-radius: 30px; /* Coins arrondis */
-    padding: 10px 20px; /* Espacement interne */
-    font-size: 14px; /* Taille du texte */
-    font-weight: bold; /* Texte en gras */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--filters-bg-color);
+    border: 2px solid var(--filters-bd-color);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
     color: var(--filters-text-color);
-    cursor: pointer; /* Curseur main au survol */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Animation au survol */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Icônes dans les boutons */
 .filters button i {
-    font-size: 16px; /* Taille de l'icône */
-    color: var(--filters-button-color); /* Couleur de l'icône bleue */
+    font-size: 16px;
+    color: var(--filters-button-color);
 }
 
 /* Effet au survol des boutons */
 .filters button:hover {
-    background-color: var(--filters-hover-color); /* Fond bleu au survol */
-    color: var(--filters-text-color); /* Texte noir au survol */
+    background-color: var(--filters-hover-color);
+    color: var(--filters-text-color);
 }
 
 .filters button:hover i {
-    color: var(--filters-button-color); /* Icône bleue au survol */
+    color: var(--filters-button-color);
 }
 
 /********* info bar *********/
 
 .info-container {
     display: flex;
-    align-items: center; /* Centre verticalement l'icône et le texte */
-    gap: 10px; /* Espace entre l'icône et le texte */
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
 
 }
@@ -360,24 +360,24 @@ nav a:hover::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px; /* Diamètre du cercle */
+    width: 30px;
     height: 30px;
-    border: 2px solid #D9D9D9; /* Bordure grise */
+    border: 2px solid var(--icon-bd-color);
     border-radius: 50%; /* Cercle parfait */
 }
 
 .icon-circle i {
-    color: var(--icon-color); /* Couleur bleue pour l'icône */
-    font-size: 16px; /* Taille de l'icône */
+    color: var(--icon-color);
+    font-size: 16px;
 }
 
 /********* Hebergements And Populaires *********/
 
 .hebergements-and-populaires {
-    display: flex; /* Place les deux sections sur une ligne */
-    justify-content: space-between; /* Espace entre les sections */
+    display: flex;
+    justify-content: space-between;
     align-items: stretch; /* prend toute la place */
-    gap: 40px; /* Espace entre les deux sections */
+    gap: 40px;
     margin-top: 20px;
 }
 
@@ -385,7 +385,7 @@ nav a:hover::before {
 .hebergements-and-populaires section {
     background-color: var(--hebergements-bg-color);
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 30px 0 30px;
     box-sizing: border-box;
 }
 
@@ -394,17 +394,17 @@ nav a:hover::before {
 .hebergements-cards {
     display: grid; /* Active la grille */
     grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
-    gap: 30px; /* Espace entre les cartes */
+    gap: 30px;
     margin-top: 20px;
-    border-radius: 10px; /* Coins arrondis */
+    border-radius: 10px;
 }
 
 .hebergements .card img {
     border-radius: 10px;
     width: 250px;
     height: 124px;
-    border-bottom-left-radius: 0px; /* Coin arrondi en bas à gauche */
-    border-bottom-right-radius: 0px; /* Coin droit en bas à droite */
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .hebergements-cards .card h3 {
@@ -437,7 +437,7 @@ nav a:hover::before {
 
 /********* Populaires Section *********/
 .populaires {
-    width: 32%;
+    width: 35%;
 }
 
 .populaires-title {
@@ -452,13 +452,13 @@ nav a:hover::before {
 }
 
 .populaires-cards img {
-    width: 123px; /* Définit la largeur de l'image */
-    height: 146px; /* Définit la hauteur de l'image */
+    width: 123px;
+    height: 146px;
     border-top-left-radius: 20px; /* Coin arrondi en haut à gauche */
     border-bottom-left-radius: 20px; /* Coin arrondi en bas à gauche */
     border-top-right-radius: 0px; /* Coin droit en haut à droite */
     border-bottom-right-radius: 0px; /* Coin droit en bas à droite */
-    object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
+    object-fit: cover;
 }
 
 .populaires-cards .card-content {
@@ -473,7 +473,7 @@ nav a:hover::before {
 .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
-    display: inline-block; /* Permet au conteneur de s'ajuster automatiquement à la largeur du texte */
+    display: inline-block;
     overflow: visible; /* Permet au texte de s'afficher intégralement */
 }
 
@@ -493,25 +493,25 @@ nav a:hover::before {
 }
 
 .activites-cards {
-    display: grid; /* Active CSS Grid */
+    display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
-    justify-content: center; /* Centre horizontalement */
-    gap: 20px; /* Espacement entre les cartes */
-    margin-top: 20px; /* Espacement supérieur */
-    padding: 0; /* Supprime les espacements internes */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
 }
 
 .activites-cards .card {
-    display: flex; /* Utilise Flexbox pour ajuster l'image à l'intérieur */
-    flex-direction: column; /* Aligne les éléments verticalement */
-    overflow: hidden; /* Masque les débordements */
-    padding: 0; /* Supprime les espacements internes */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
 }
 
 .activites-cards img {
-    width: 100%; /* Définit une largeur fixe */
-    height: 380px; /* Définit une hauteur fixe */
-    object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
@@ -520,23 +520,23 @@ nav a:hover::before {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 15px;
-    font-size: 16px; /* Taille du texte */
-    text-align: left; /* Texte à gauche */
+    font-size: 16px;
+    text-align: left;
 }
 
 /********* Footer *********/
 footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligne les blocs en haut verticalement */
-    padding: var(--padding);
+    align-items: flex-start;
+    padding: 20px;
     background-color: var(--footer-bg-color);
     gap: 20px;
 }
 
 footer div {
     flex: 1; /* Chaque bloc prend une largeur égale */
-    text-align: left; /* Aligne le contenu à gauche */
+    text-align: left;
 }
 
 footer h4 {
@@ -568,22 +568,29 @@ footer a:hover {
 @media (max-width: 1024px) {
 
     .hebergements-and-populaires {
-        flex-direction: column; /* Empile les sections verticalement */
+        flex-direction: column;
     }
 
     .populaires {
-        display: flex; /* Active Flexbox */
-        flex-direction: column; /* Permet aux enfants de s'organiser */
-        align-items: flex-start; /* Centre les cartes horizontalement */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
     }
 
     .populaires-cards {
         display: flex;
-        flex-direction: row; /* Aligne les cartes horizontalement */
-        justify-content: center; /* Centre les cartes dans leur conteneur */
-        align-items: flex-start; /* Ajuste l'alignement vertical des cartes */
-        gap: 20px; /* Espace uniforme entre les cartes */
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .populaires-cards .card {
+        flex: 1 1 calc(33.33% - 20px); /* Même logique pour un affichage responsive */
+        max-width: 300px; /* Largeur maximale identique */
+        
     }
 
     .populaires-title {
@@ -594,11 +601,6 @@ footer a:hover {
         padding: 0;
     }
     
-    .populaires-cards .card {
-        flex: 0 1 calc(33.33% - 20px); /* Chaque carte occupe environ 1/3 de la largeur disponible */
-        max-width: 1024px; /* Largeur maximale pour limiter la taille */
-        height: auto; /* Ajuste automatiquement la hauteur */
-    }
 
     .populaires-cards .card-title {
         font-size: 14px;
@@ -621,11 +623,11 @@ footer a:hover {
     }
     
     .main-container {
-        align-items: center; /* Centre les éléments horizontalement */
-        justify-content: center; /* Centre les éléments verticalement */
+        align-items: center;
+        justify-content: center;
         max-width: 768px; /* Largeur maximale pour rester mobile-friendly */
-        padding: 0; /* Supprime les marges internes */
-        margin: 0 auto; /* Supprime les marges externes et centre horizontalement */
+        padding: 0;
+        margin: 0 auto;
     }
         
     
@@ -633,23 +635,23 @@ footer a:hover {
 
     header {
         display: flex;
-        flex-direction: column; /* Aligne les éléments verticalement */
+        flex-direction: column;
         width: 100%;
-        margin-top: 20px; /* Espacement au-dessus du header */
+        margin-top: 20px;
     }
     
     .logo {
-        margin-bottom: 10px; /* Ajoute un espacement entre le logo et la navigation */
+        margin-bottom: 10px;
     }
     
     nav {
         display: flex;
-        align-items: center; /* Centre les liens */
-        justify-content: center; /* Centre les liens horizontalement */
-        width: 100%; /* Prend toute la largeur disponible */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         position: relative;
-        margin-top: 20px; /* Espacement au-dessus du header */
-        gap: 0; /* Désactive l'espace entre les éléments */
+        margin-top: 20px;
+        gap: 0;
     }
     
     nav a {
@@ -671,31 +673,31 @@ footer a:hover {
         position: absolute;
         bottom: -15px; /* Place la bordure en bas du lien */
         left: 0;
-        width: 100%; /* La bordure couvre toute la largeur du lien */
-        height: 2px; /* Épaisseur de la bordure */
+        width: 100%;
+        height: 2px;
         background-color: var(--nav-phone-bg-color); 
-        transition: background-color 0.3s ease; /* Transition fluide pour la couleur */
+        transition: background-color 0.3s ease;
     }
 
     /* Style pour le lien actif (ciblé avec :target, si applicable) */
     nav a:hover::after {
-    background-color: var(--nav-phone-hover-color); /* Bordure bleue pour le lien actif */
+    background-color: var(--nav-phone-hover-color);
     }
 
     .hebergements h1 {
-        font-size: 24px; /* Taille adaptée pour le titre principal */
-        font-weight: bold; /* Texte en gras */
-        text-align: left; /* Alignement à gauche */
-        margin: 0 20px 10px 30px; /* Pas de marge en haut, mais espacement en bas */
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        margin: 0 20px 10px 30px;
         line-height: 1.4; /* Espacement entre les lignes */
-        color: var(--hebergements-text-color); /* Couleur noire pour le titre */
+        color: var(--hebergements-text-color);
     }
     
     .hebergements p {
-        font-size: 16px; /* Taille du texte secondaire */
-        font-weight: normal; /* Texte en style normal */
-        text-align: left; /* Alignement à gauche */
-        margin: 0 30px; /* Suppression de la marge par défaut */
+        font-size: 16px;
+        font-weight: normal;
+        text-align: left;
+        margin: 0 30px;
         line-height: 1.6; /* Espacement plus important pour la lisibilité */
         color: var(--hebergements-text-color);
     }
@@ -707,22 +709,22 @@ footer a:hover {
     }
 
     .search-bar {
-        justify-content: center; /* Centre les liens horizontalement */
-        width: 100%; /* Prend toute la largeur disponible */
-        margin: 20px; /* Centre horizontalement */
+        justify-content: center;
+        width: 100%;
+        margin: 20px;
     }
     
     .search-input input {
-        border: none; /* Supprime les bordures */
+        border: none;
         outline: none; /* Supprime l'effet de focus */
         text-align: center;
         font-size: 18px;
         color: var(--search-text-color);
-        width: auto; /* Largeur personnalisée */
+        width: auto;
     }
 
     .search-button {
-        border-radius: 15px; /* Coins arrondis pour mobile */
+        border-radius: 15px;
     }
 
     .search-button .search-text {
@@ -737,26 +739,26 @@ footer a:hover {
 
     /* Conteneur général */
     .filters-container {
-        flex-direction: column; /* Boutons empilés verticalement */
-        gap: 10px; /* Réduction de l'espacement */
-        margin-top: 10px; /* Réduction de la marge supérieure */
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
     }
 
     /* Boutons de filtre */
     .filters {
-        display: grid; /* Utilisation de la grille */
+        display: grid;
         grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
-        gap: 10px; /* Espacement entre les colonnes et les lignes */
-        justify-content: center; /* Centrage horizontal des éléments */
-        align-items: center; /* Centrage vertical des éléments dans la grille */
-        width: 100%; /* La grille occupe toute la largeur disponible */
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         padding: 0 30px;
     }
 
     /* Label "Filtres" */
     .filters-label {
         font-size: 16px;
-        margin-bottom: 10px; /* Ajout d'un espacement sous le label */
+        margin-bottom: 10px;
         padding: 0 30px;
         justify-content: left;
         text-align: center;
@@ -764,13 +766,13 @@ footer a:hover {
 
     .filters button {
         justify-content: center;
-        padding: 10px; /* Réduction de l'espacement interne */
-        font-size: 16px; /* Réduction de la taille du texte */
+        padding: 10px;
+        font-size: 16px;
     }
 
     /* Icônes dans les boutons */
     .filters button i {
-        font-size: 22px; /* Réduction de la taille des icônes */
+        font-size: 22px;
     }
 
     /********* info bar *********/
@@ -827,26 +829,27 @@ footer a:hover {
 
     .populaires-cards {
         display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
-        flex-direction: column;
+        
     }
     
     .populaires-cards .card {
-        align-items: center; /* Centre verticalement l'image et le contenu */
-        gap: 20px; /* Espacement entre l'image et le texte */
+        align-items: center;
+        gap: 20px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet flottant */
-        width: 350px; /* largeur fixe */
-        height: auto; /* Fixez une hauteur uniforme */
+        min-width: 350px;
+        height: auto;
         overflow: hidden;
         margin-top: 20px;
     }
 
     .populaires-cards img {
         flex-shrink: 0; /* empeche le retrecsissement de l'image */
-        width: 35%; /* Largeur fixe pour l'image */
+        width: 35%;
         overflow: hidden;
-        border-radius: 15px 0 0 15px; /* Coins arrondis pour toute la carte */
+        border-radius: 15px 0 0 15px;
     }
 
     .populaires-cards .card-content {
@@ -858,7 +861,7 @@ footer a:hover {
     }
     
     .populaires-cards .card-rating {
-        margin-top: 60px; /* Positionne la note en bas du conteneur */
+        margin-top: 60px;
     }
 
     /********* Hebergements Section *********/
@@ -866,22 +869,22 @@ footer a:hover {
     #hebergements {
         order: 2; /* La section "Hébergements" en second */
         background-color: var(--hebergements-phone-bg-color);
-        width: 100%; /* Ajustez cette largeur selon votre design */
+        width: 100%;
     }
 
      /* Affichage en colonne pour les hébergements */
      .hebergements-cards {
         align-items: center;
         grid-template-columns: 1fr; /* Une seule colonne */
-        gap: 20px; /* Espace entre les cartes */
-        padding: 0; /* Réduction du padding pour mobile */
+        gap: 20px;
+        padding: 0;
         background-color: var(--hebergements-phone-bg-color);
     }
 
     .hebergements .card img {
         width: 100%;
-        border-top-left-radius: 0px; /* Coin arrondi en bas à gauche */
-        border-top-right-radius: 0px; /* Coin droit en bas à droite */
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
 
     .show-more {
@@ -894,26 +897,26 @@ footer a:hover {
     #activites {
         order: 3; /* La section "Activités" en dernier */
         margin: 0 auto;
-        width: 100%; /* Ajustez cette largeur selon votre design */
+        width: 100%;
     }
 
     #activites h2 {
-        text-align: left; /* Aligne le texte à gauche */
-        margin-left: 50px; /* Ajoute un léger décalage à gauche pour un meilleur espacement */
+        text-align: left;
+        margin-left: 50px;
     }
 
     .activites-cards {
-        display: flex; /* Utilisation de flexbox pour centrer les cartes */
+        display: flex;
         flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
-        justify-content: center; /* Centre les cartes horizontalement */
-        gap: 15px; /* Espacement entre les cartes */
+        justify-content: center;
+        gap: 15px;
     }
     .activites-cards .card {
         align-items: center;
         background-color: var(--cards-bg-color);
-        width: 80%; /* Largeur fixe pour la carte */
-        border-radius: 20px; /* Coins arrondis globaux */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        width: 80%;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .activites-cards img {
@@ -924,21 +927,21 @@ footer a:hover {
     }
 
     .activites-cards .card h3 {
-        margin-top: 10px; /* Réduction de la marge supérieure */
-        margin-bottom: 10px; /* Réduction de la marge inférieure */
+        margin-top: 10px;
+        margin-bottom: 10px;
         margin-left: 5px;
-        font-size: 14px; /* Réduction de la taille du texte pour mobile */
-        width: 90%; /* Limite la largeur du texte */
-        padding: 5px; /* Ajoute un léger padding interne */
+        font-size: 14px;
+        width: 90%;
+        padding: 5px;
     }
 
     /********* Footer *********/
     footer {
-        flex-direction: column; /* Empile les sections verticalement */
+        flex-direction: column;
         max-width: 100%; /* Assure que le footer occupe la même largeur */
-        width: 100%; /* Prend la largeur complète de son conteneur parent */
-        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-        gap: 20px; /* Espacement entre les sections */
+        width: 100%;
+        box-sizing: border-box;
+        gap: 20px;
         margin: 20px auto;
         margin-bottom: 0;
         padding: 30px;
