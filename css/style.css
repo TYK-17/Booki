@@ -527,9 +527,16 @@ nav a:hover::before {
 /********* Footer *********/
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligne les blocs en haut verticalement */
     padding: var(--padding);
     background-color: var(--footer-bg-color);
+    gap: 20px;
+}
+
+footer div {
+    flex: 1; /* Chaque bloc prend une largeur égale */
+    text-align: left; /* Aligne le contenu à gauche */
 }
 
 footer h4 {
@@ -934,6 +941,7 @@ footer a:hover {
         gap: 20px; /* Espacement entre les sections */
         margin: 20px auto;
         margin-bottom: 0;
+        padding: 30px;
     }
     
     footer ul {
