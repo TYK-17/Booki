@@ -2,7 +2,6 @@
 * {
     font-family: 'Raleway', sans-serif;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -108,7 +107,7 @@ header {
 
 .logo {
     display: flex;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     box-sizing: border-box;
     justify-content: flex-start;
 }
@@ -172,7 +171,7 @@ nav a:hover::before {
     object-fit: cover; /* Gère l'adaptation de l'image dans sa zone */
     width: 100%;
     border-radius: 15px 15px 0 0;
-    height: 150px;
+    height: 124px;
 }
 
 .card-title {
@@ -197,6 +196,13 @@ nav a:hover::before {
     width: 100%;
 }
 
+.hebergements h1 {
+    margin-bottom: 8px; /* Ajoute un espace de 8 pixels en bas du h1 */
+}
+
+.hebergements p {
+    margin-top: 0; /* Supprime tout espace supplémentaire en haut du p */
+}
 
 /********* Search Bar *********/
 
@@ -211,11 +217,12 @@ nav a:hover::before {
 
 .search-bar {
     display: flex;
-    align-items: center;
     background: transparent;
+    border-radius: 15px;
     overflow: hidden; /* Coupe les débordements éventuels */
-    width: 40%;
-    margin: 20px 0px;
+    margin: 20px 0;
+    border-top: 1px solid var(--search-icon-bg-color);
+    border-bottom: 1px solid var(--search-icon-bg-color);
 }
 
 /* Premier conteneur : Icône */
@@ -224,11 +231,13 @@ nav a:hover::before {
     align-items: center;
     justify-content: center;
     background-color: var(--search-icon-bg-color);
-    padding: 15px 16px 15px 16px; /* Espacement interne */
+    padding: 15px 16px; /* Espacement interne */
     border-top-left-radius: 15px; /* Arrondi gauche supérieur */
     border-bottom-left-radius: 15px; /* Arrondi gauche inférieur */
     width: 50px; /* Limite absolu de la largeur du texte */
     height: 49px; /* Limite absolu de la hauteur du texte */
+    border-top: 1px solid var(--search-icon-bd-color);
+    border-bottom: 1px solid var(--search-icon-bd-color);
 }
 
 .marker-icon i {
@@ -245,16 +254,16 @@ nav a:hover::before {
 .search-input {
     display: flex;
     align-items: center;
-    padding: 15px 16px 15px 16px;
     background-color: var(--search-bg-color);
     flex-grow: 1; /* Permet au champ de texte de s'étendre */
+    
 }
 
 .search-input input {
     border: none; /* Supprime les bordures */
     outline: none; /* Supprime l'effet de focus */
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     color: var(--search-text-color);
     width: auto;
 }
@@ -273,7 +282,7 @@ nav a:hover::before {
     border: none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 15px 16px 15px 16px;
+    padding: 15px 16px;
     font-size: 16px;
     cursor: pointer; /* Curseur main au survol */
 }
@@ -323,7 +332,7 @@ nav a:hover::before {
     border: 2px solid var(--filters-bd-color);
     border-radius: 30px;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: bold;
     color: var(--filters-text-color);
     cursor: pointer;
@@ -332,7 +341,12 @@ nav a:hover::before {
 
 /* Icônes dans les boutons */
 .filters button i {
-    font-size: 16px;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    text-align: center; /* permet de définir des dimensions spécifiques sur l'élément */
+    line-height: 22px;  /* aligne verticalement l'icône en définissant la hauteur de ligne égale à la hauteur de l'élément */
     color: var(--filters-button-color);
 }
 
@@ -408,12 +422,19 @@ nav a:hover::before {
 }
 
 .hebergements-cards .card h3 {
-    margin: 10px 0;
+    margin: 10px;
+    font-size: 16px;
 }
 
 .hebergements-cards .card p {
-    margin: 10px 0;
+    margin: 10px;
+    font-size: 14px;
 }
+
+.hebergements-cards .card-rating {
+    padding: 10px;
+}
+
 
 .show-more {
     display: flex;
@@ -421,7 +442,7 @@ nav a:hover::before {
     align-items: center;
     color: var(--show-text-color);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 21px;
     border: none;
     border-radius: 5px;
     padding: 10px 0px;
@@ -567,8 +588,29 @@ footer a:hover {
 /********* Responsive Design *********/
 @media (max-width: 1024px) {
 
+    .search-input input {
+        font-size: 21px;
+    }
+    .search-bar {
+        overflow: visible;
+        
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
+    }
+
+    .filters-container {
+        flex-direction: column;
+    }
+
+    .filters button {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .filters button i {
+        font-size: 18px;
     }
 
     .populaires {
@@ -600,14 +642,17 @@ footer a:hover {
         width: 100%;
         padding: 0;
     }
-    
+
+    .populaires-cards img {
+        width: 92px;
+    }
 
     .populaires-cards .card-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .populaires-cards .card-subtitle {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .activites-cards img {
@@ -705,26 +750,27 @@ footer a:hover {
     /********* Search Bar *********/
 
     .search-form {
-        margin: 20px;
+        margin: 20px 10px;
     }
 
     .search-bar {
         justify-content: center;
         width: 100%;
         margin: 20px;
+        overflow: visible;
     }
     
+    .search-input {
+        overflow: visible;
+    }
+
     .search-input input {
-        border: none;
-        outline: none; /* Supprime l'effet de focus */
-        text-align: center;
         font-size: 18px;
-        color: var(--search-text-color);
-        width: auto;
     }
 
     .search-button {
         border-radius: 15px;
+        box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
     }
 
     .search-button .search-text {
@@ -749,8 +795,6 @@ footer a:hover {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
         gap: 10px;
-        justify-content: center;
-        align-items: center;
         width: 100%;
         padding: 0 30px;
     }
@@ -765,9 +809,8 @@ footer a:hover {
     }
 
     .filters button {
-        justify-content: center;
-        padding: 10px;
-        font-size: 16px;
+        justify-content: flex-start;
+        padding: 15px 0 15px 20px;
     }
 
     /* Icônes dans les boutons */
