@@ -114,7 +114,6 @@ header {
 .logo img {
   margin: 0;
   display: block;
-  image-orientation: left;
   width: 100%;
   height: 19px;
 }
@@ -694,7 +693,7 @@ footer a:hover {
     text-align: center;
     text-decoration: none;
     color: var(--nav-phone-text-color);
-    padding: 10px 0p;
+    padding: 10px 0;
   }
 
   /* Désactiver ::after dans ce contexte */
